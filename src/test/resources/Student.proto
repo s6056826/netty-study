@@ -1,0 +1,11 @@
+syntax = "proto2";
+package DataInfo;
+
+option java_package = "cn.dbw.netty.ssy5";
+option java_outer_classname = "DataInfo";
+
+message Student {
+  required string name = 1;
+  required int32 age = 2;
+  optional string sex = 3;
+  }

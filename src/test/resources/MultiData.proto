@@ -1,0 +1,34 @@
+syntax = "proto2";
+package DataInfo;
+
+option java_package = "cn.dbw.netty.ssy6";
+option java_outer_classname = "MultiData";
+
+
+message MyMessage{
+   
+   enum DataType{
+      StudentType=1;
+      CatType=0;
+   }
+   
+   required DataType dataType=1;
+   
+   oneof dataBody {
+     Student student=2;
+     Cat cat=3;
+   }
+
+}
+
+
+message Student {
+  optional string name = 1;
+  optional int32 age = 2;
+  optional string sex = 3;
+  }
+  
+  message Cat {
+  optional string name = 1;
+  optional string color = 3;
+  }

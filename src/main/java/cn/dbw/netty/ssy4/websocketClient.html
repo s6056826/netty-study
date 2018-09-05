@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+        var socket;
+        if(window.WebSocket){
+        	socket=new WebSocket("ws://localhost:8809/ws");
+            //收到消息
+        	socket.onmessage=function(event){
+        		var ta=document.getElementById("");
+        	}
+            //连接建立
+        	socket.onopen=function(event){
+
+        	}
+            //连接关闭
+        	socket.onclose=function(event){
+
+        	}
+
+        }else{
+        	alert("浏览器不支持websocket！")；
+        }
+        //websocket发送消息
+        function send(message){
+        	if(!window.WebSocket){
+               return;
+        	}
+        	if(socket.readyState==WebSocket.OPEN){
+        		socket.send(message);
+        	}
+        }
+
+	</script>
+</head>
+<body>
+
+<form action="">
+<label>客户端</label>
+<textarea rows="" cols=""></textarea>
+<button onclick="">发送</button>
+<label>服务器</label>
+<textarea rows="" cols=""></textarea>
+<button onclick="">清空</button>
+</form>
+
+
+</body>
+</html>
